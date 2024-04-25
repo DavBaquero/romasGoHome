@@ -77,14 +77,14 @@ public class NumeroRomanoTest {
         numeroRomano = new RomanNumber(testCase);
         assertNotEquals(3503, numeroRomano.toDecimal());
     }
-/*
+
     /**
      * Grupos sustractivos
      * IV(4), IX(9),
      * XL(40), XC(90),
      * CD(400), CM(900)
      */
-/*
+
     @Test
     @Tag("sustractivo")
     public void grupo_C_DM_test() {
@@ -150,7 +150,7 @@ public class NumeroRomanoTest {
         testCase = "CDXXXIX"; // 439
         numeroRomano = new RomanNumber(testCase);
         assertEquals(439, numeroRomano.toDecimal());
-    }*/
+    }
     /**
      * Test del tipo enumerado
      * RomanSymbols
