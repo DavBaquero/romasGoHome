@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 public class RomanNumber {
     private final String numero;
     private short decimalNum = 0;
-    public static final String romanRegex = "[M]";
+    public static final String romanRegex = "[IXCM]";
 
     public RomanNumber(String numeroRomano) {
         this.numero = numeroRomano;
