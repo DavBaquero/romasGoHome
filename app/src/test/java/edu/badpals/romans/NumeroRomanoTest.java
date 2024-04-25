@@ -155,7 +155,7 @@ public class NumeroRomanoTest {
      * Test del tipo enumerado
      * RomanSymbols
      */
-    /*@ParameterizedTest
+    @ParameterizedTest
     @Tag("enumerado")
     @CsvSource({
             "5,   V",
@@ -166,5 +166,5 @@ public class NumeroRomanoTest {
         numeroRomano = new RomanNumber(roman);
         numeroRomano.toDecimal();
         assertEquals(decimal, numeroRomano.getDecimalNum());
-    }*/
+    }
 }
