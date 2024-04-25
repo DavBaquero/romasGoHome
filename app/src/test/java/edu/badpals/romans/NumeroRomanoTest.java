@@ -1,10 +1,12 @@
 package edu.badpals.romans;
 
 import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class NumeroRomanoTest {
     public RomanNumber numeroRomano;
@@ -33,7 +35,7 @@ public class NumeroRomanoTest {
          * Sino, hay que programar la gestion de errores
          */
     }
-/*
+
     @Test
     @Tag("sumatorio")
     public void tres_repeticiones_C_test() {
@@ -82,7 +84,7 @@ public class NumeroRomanoTest {
      * XL(40), XC(90),
      * CD(400), CM(900)
      */
-/*
+
     @Test
     @Tag("sustractivo")
     public void grupo_C_DM_test() {
@@ -149,29 +151,10 @@ public class NumeroRomanoTest {
         numeroRomano = new RomanNumber(testCase);
         assertEquals(439, numeroRomano.toDecimal());
     }
-
-    /**
-     * Test de la coleccion de
-     * expresiones regulares
-     */
-/*
-    @Test
-    @Tag("regex")
-    public void init_regex_collection_test() {
-        String testCase = "V";
-        numeroRomano = new RomanNumber(testCase);
-        assertThat(numeroRomano.getRegexCollection().getAllRegex()).hasSize(2);
-
-        assertThat(numeroRomano.getRegexCollection().getAllRegex()).containsExactly("(?<!C)[DM]|(?<!X)[LC](?![DM])|(?<!I)[VX](?![LC])|I(?![VX])", "(C[DM])|(X[LC])|(I[VX])");
-
-        assertThat(numeroRomano.getRegexCollection().getRegex("grupoSumatorio")).isEqualTo("(?<!C)[DM]|(?<!X)[LC](?![DM])|(?<!I)[VX](?![LC])|I(?![VX])");
-        assertThat(numeroRomano.getRegexCollection().getRegex("grupoSustractivo")).isEqualTo("(C[DM])|(X[LC])|(I[VX])");
-    }
-
     /**
      * Test del tipo enumerado
      * RomanSymbols
-     *//*
+     */
     @ParameterizedTest
     @Tag("enumerado")
     @CsvSource({
@@ -181,6 +164,7 @@ public class NumeroRomanoTest {
     })
     public void valor_decimal_test(Short decimal, String roman) {
         numeroRomano = new RomanNumber(roman);
-        assertEquals(decimal, numeroRomano.decimalValue(roman));
-    }*/
+        numeroRomano.toDecimal();
+        assertEquals(decimal, numeroRomano.getDecimalNum());
+    }
 }
